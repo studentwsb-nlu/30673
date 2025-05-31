@@ -1,6 +1,11 @@
 {
 	"image": "mcr.microsoft.com/devcontainers/universal:2",
 	"features": {
-		"ghcr.io/devcontainers-extra/features/terraform-asdf:2": {}
+		"ghcr.io/devcontainers-extra/features/terraform-asdf:2": {},
+		"ghcr.io/devcontainers/features/aws-cli:1": {}
+	},
+	"secrets": {
+		"AWS_ACCESS_KEY_ID": {},
+		"AWS_SECRET_ACCESS_KEY": {}
 	}
 }
