@@ -71,6 +71,19 @@ Projekt jest gotowy do uruchomienia w środowisku [GitHub Codespaces](https://gi
 - RDS Multi-AZ zapewnia wysoką dostępność bazy danych
 - ALB rozkłada ruch na wiele instancji
 
+## 🔗 Kolejność powstawania komponentów i gotowość do wdrożenia aplikacji
+
+Terraform automatycznie dba o prawidłową kolejność tworzenia zasobów dzięki zależnościom między modułami i przekazywaniu parametrów (np. endpoint RDS do EC2). Dzięki temu:
+
+- Najpierw powstaje sieć (VPC, subnety, Internet Gateway), a następnie security groups.
+- Baza danych RDS jest tworzona w prywatnych subnetach i zabezpieczona odpowiednią security group.
+- Application Load Balancer (ALB) powstaje w publicznych subnetach.
+- Instancje EC2 (wraz z Auto Scaling) są uruchamiane na końcu, mają dostęp do endpointu RDS i mogą łączyć się z bazą.
+
+**W efekcie możesz bezpiecznie wdrażać aplikację webową na EC2, która łączy się z bazą RDS – infrastruktura powstaje w odpowiedniej kolejności i jest gotowa do działania.**
+
+Jeśli chcesz zautomatyzować instalację aplikacji (np. Node.js, Python, Java) na EC2, wystarczy dodać odpowiednie polecenia do pliku `user_data.sh` w module EC2.
+
 ## 👤 Autor
 Projekt inżynierski: "Infrastruktura Cloud-Native dla Bezpiecznych i Skalowalnych Aplikacji Webowych z wykorzystaniem AWS i Terraform"
 
