@@ -1,18 +1,18 @@
-# Infrastruktura Cloud-Native dla Bezpiecznych i Skalowalnych Aplikacji Webowych z AWS i Terraform
+# ☁️ Infrastruktura Cloud-Native dla Bezpiecznych i Skalowalnych Aplikacji Webowych z AWS i Terraform
 
-## Opis projektu
+## 📝 Opis projektu
 
 Projekt demonstruje praktyczne podejście do budowy nowoczesnej, odpornej na awarie infrastruktury dla aplikacji webowej w chmurze Amazon Web Services (AWS) z wykorzystaniem narzędzia Terraform (Infrastructure as Code).
 
-### Główne cechy:
-- **Własna sieć (VPC)** z publicznymi i prywatnymi podsieciami
-- **Application Load Balancer (ALB)** zapewniający równoważenie ruchu
-- **Auto Scaling Group (ASG)** dla wysokiej dostępności i skalowalności
-- **Instancje EC2** w prywatnych subnetach
-- **Relacyjna baza danych RDS** (Multi-AZ)
-- **Mechanizmy bezpieczeństwa**: izolacja sieciowa, IAM (zasady najmniejszych uprawnień), szyfrowanie, monitoring
+### 🚀 Główne cechy:
+- 🛡️ **Własna sieć (VPC)** z publicznymi i prywatnymi podsieciami
+- ⚖️ **Application Load Balancer (ALB)** zapewniający równoważenie ruchu
+- 📈 **Auto Scaling Group (ASG)** dla wysokiej dostępności i skalowalności
+- 🖥️ **Instancje EC2** w prywatnych subnetach
+- 🗄️ **Relacyjna baza danych RDS** (Multi-AZ)
+- 🔒 **Mechanizmy bezpieczeństwa**: izolacja sieciowa, IAM (zasady najmniejszych uprawnień), szyfrowanie, monitoring
 
-## Struktura katalogów
+## 📁 Struktura katalogów
 
 ```
 terraform-hai/
@@ -27,7 +27,7 @@ terraform-hai/
     rds/             # Baza danych RDS
 ```
 
-## Szybki start
+## ⚡ Szybki start
 
 1. **Zainstaluj Terraform**: https://www.terraform.io/downloads.html
 2. **Skonfiguruj poświadczenia AWS** (np. przez `aws configure` lub zmienne środowiskowe)
@@ -41,7 +41,7 @@ terraform-hai/
    terraform apply
    ```
 
-## Praca w środowisku GitHub Codespaces / Devcontainer
+## 💻 Praca w środowisku GitHub Codespaces / Devcontainer
 
 Projekt jest gotowy do uruchomienia w środowisku [GitHub Codespaces](https://github.com/features/codespaces) lub lokalnie z użyciem plików `./devcontainer`.
 
@@ -57,19 +57,19 @@ Projekt jest gotowy do uruchomienia w środowisku [GitHub Codespaces](https://gi
 2. Zainstaluj rozszerzenie [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
 3. Wybierz "Reopen in Container".
 
-## Bezpieczeństwo
+## 🔐 Bezpieczeństwo
 - Instancje EC2 działają w prywatnych subnetach
 - Dostęp do bazy RDS tylko z EC2 (Security Group)
 - IAM z zasadą najmniejszych uprawnień
 - Szyfrowanie danych (RDS, komunikacja)
 - Monitoring i logowanie (CloudWatch, logi ALB)
 
-## Skalowalność i HA
+## 📊 Skalowalność i HA
 - Auto Scaling Group automatycznie dostosowuje liczbę instancji EC2
 - RDS Multi-AZ zapewnia wysoką dostępność bazy danych
 - ALB rozkłada ruch na wiele instancji
 
-## Autor
+## 👤 Autor
 Projekt inżynierski: "Infrastruktura Cloud-Native dla Bezpiecznych i Skalowalnych Aplikacji Webowych z wykorzystaniem AWS i Terraform"
 
 ---
