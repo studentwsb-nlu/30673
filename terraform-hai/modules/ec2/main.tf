@@ -9,6 +9,10 @@ resource "aws_launch_template" "web" {
   }))
 
   vpc_security_group_ids = var.security_group_ids
+
+  iam_instance_profile {
+    name = aws_iam_instance_profile.ec2_profile.name
+  }
 }
 
 data "aws_ami" "ubuntu" {
@@ -34,7 +38,6 @@ resource "aws_autoscaling_group" "web_asg" {
     value               = "web-server"
     propagate_at_launch = true
   }
-  iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
   target_group_arns    = [var.target_group_arn]
   health_check_type    = "EC2"
 }
