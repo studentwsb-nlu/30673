@@ -33,4 +33,12 @@ module "ec2" {
   subnet_ids = module.vpc.public_subnet_ids
   security_group_ids = [module.security_groups.web_sg_id]
   rds_endpoint = module.rds.endpoint
+  target_group_arn = module.alb.target_group_arn
+}
+
+module "alb" {
+  source                = "./modules/alb"
+  vpc_id                = module.vpc.vpc_id
+  subnet_ids            = module.vpc.public_subnet_ids
+  alb_security_group_id = module.security_groups.web_sg_id
 }

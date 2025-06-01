@@ -34,6 +34,9 @@ resource "aws_autoscaling_group" "web_asg" {
     value               = "web-server"
     propagate_at_launch = true
   }
+  iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
+  target_group_arns    = [var.target_group_arn]
+  health_check_type    = "EC2"
 }
 
 output "asg_name" {
