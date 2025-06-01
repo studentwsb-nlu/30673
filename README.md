@@ -1,4 +1,6 @@
-# ☁️ Infrastruktura Cloud-Native dla Bezpiecznych i Skalowalnych Aplikacji Webowych z AWS i Terraform
+# 🏗️ Infrastruktura jako kod dla chmury AWS
+
+### Automatyzacja, bezpieczeństwo i skalowalność aplikacji webowych z Terraform
 
 ## 📝 Opis projektu
 
