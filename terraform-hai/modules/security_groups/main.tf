@@ -1,6 +1,6 @@
 // Security Groups Module
 resource "aws_security_group" "web_sg" {
-  name        = "web-sg"
+  name        = "30673-web-sg"
   description = "Allow HTTP and SSH"
   vpc_id      = var.vpc_id
 
@@ -25,7 +25,7 @@ resource "aws_security_group" "web_sg" {
 }
 
 resource "aws_security_group" "rds_sg" {
-  name        = "rds-sg"
+  name        = "30673-rds-sg"
   description = "Allow DB access from web servers"
   vpc_id      = var.vpc_id
 
@@ -44,7 +44,7 @@ resource "aws_security_group" "rds_sg" {
 }
 
 resource "aws_security_group" "alb_sg" {
-  name        = "alb-sg"
+  name        = "30673-alb-sg"
   description = "Allow HTTP from anywhere to ALB"
   vpc_id      = var.vpc_id
 
