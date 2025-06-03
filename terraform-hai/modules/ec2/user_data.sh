@@ -1,17 +1,20 @@
 #!/bin/bash
 # Install Node.js and start a simple app
 apt-get update
-apt-get install -y curl
+apt-get install -y curl git
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-apt-get install -y nodejs git
+apt-get install -y nodejs
 
-# Clone your app repo or use a simple server
-cat <<EOF > /home/ubuntu/app.js
-const http = require('http');
-const server = http.createServer((req, res) => {
-  res.end('Hello from Node.js!');
-});
-server.listen(80);
+# Copy app from /app directory (within the same repo)
+cp -r /app /home/ubuntu/app
+cd /home/ubuntu/app
+
+# Create .env file with sample data (in production, values might be passed through Terraform)
+cat <<EOF > .env
+DB_HOST=localhost
+DB_USER=example
+DB_PASS=example
 EOF
 
-nohup node /home/ubuntu/app.js &
+npm install
+nohup npm start &
